@@ -8,8 +8,9 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
         
         self.import_character_assets()
-        self.image = pygame.surface.Surface((32,64))
-        self.image.fill('red')
+        self.frame_index = 0
+        self.animation_speed = 0.15
+        self.image = self.animations.get('idle')[self.frame_index]
         self.rect = self.image.get_rect(topleft=pos)
         
         # player movement
@@ -30,7 +31,14 @@ class Player(pygame.sprite.Sprite):
             self.animations[animation] = import_folder(full_path)
         
     
-    
+    def animate(self):
+        animation = self.animations.get('run')
+
+        # loop over frame index
+        
+        pass
+
+
     def update(self) -> None:
         self.get_input()
         # self.rect.x += self.direction.x * self.speed
