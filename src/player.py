@@ -6,6 +6,8 @@ from support import import_folder
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos) -> None:
         super().__init__()
+        
+        self.import_character_assets()
         self.image = pygame.surface.Surface((32,64))
         self.image.fill('red')
         self.rect = self.image.get_rect(topleft=pos)
@@ -15,6 +17,8 @@ class Player(pygame.sprite.Sprite):
         self.speed = 8
         self.gravity = 0.8
         self.jump_speed = -16
+
+        
 
 
     def import_character_assets(self):
