@@ -1,13 +1,13 @@
 import pygame, sys
 
 
-from settings import screen_height, screen_widht, level_map
+from settings import screen_height, screen_width, level_map
 from tiles   import Tile
 from level import Level
 # Pygame setup
 pygame.init()
 
-screen = pygame.display.set_mode((screen_widht, screen_height))
+screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
 level = Level(level_map, screen)
 
